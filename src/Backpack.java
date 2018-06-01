@@ -11,21 +11,32 @@ public class Backpack
 
 	private void packAndCheck()
 	{
+		 pencil = new Pencil();
+		 ruler = new Ruler();
+		 textbook = new Textbook();
+		 pencil.write("kaburpslaps");
+		 ruler.measure();
+		 textbook.read();
 		// Your mission is to go to school.
 		// 1. First you need to put all your supplies into your backpack - use the putInBackpack(...) methods
-
+	
+		putInBackpack(pencil);
+		putInBackpack(ruler);
+		putInBackpack(textbook);
 		goToSchool();
 	}
 
 	public static void main(String[] args)
 	{
 		new Backpack().packAndCheck();
+
 	}
 
 	public void putInBackpack(Pencil supply)
 	{
 		this.pencil = supply;
 		log(supply);
+		
 	}
 
 	public void putInBackpack(Ruler supply)
@@ -77,6 +88,7 @@ class Pencil extends Supply
 	{
 		this.name = "pencil";
 		System.out.println("You got your pencil!");
+		
 	}
 
 	public void write(String writing)
